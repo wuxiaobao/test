@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Docker命令 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 九百牛一毛的梦想 1/900 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/pic.jpg">
+        </div>
+        <div class="name">
+            <i>Yi Mao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令介绍"><span class="toc-text">命令介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#镜像"><span class="toc-text">镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取镜像"><span class="toc-text">获取镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看镜像信息"><span class="toc-text">查看镜像信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜寻镜像"><span class="toc-text">搜寻镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除镜像"><span class="toc-text">删除镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建镜像"><span class="toc-text">创建镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存出和载入镜像"><span class="toc-text">存出和载入镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传镜像"><span class="toc-text">上传镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器"><span class="toc-text">容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建容器"><span class="toc-text">创建容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建并启动容器"><span class="toc-text">新建并启动容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终止容器"><span class="toc-text">终止容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启容器"><span class="toc-text">重启容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入容器"><span class="toc-text">进入容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除容器"><span class="toc-text">删除容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看容器"><span class="toc-text">查看容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出容器"><span class="toc-text">导出容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入容器"><span class="toc-text">导入容器</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 九百牛一毛的梦想 1/900 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Docker命令
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-11-28 11:20:47</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="命令介绍"><a href="#命令介绍" class="headerlink" title="命令介绍"></a>命令介绍</h1><h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p>Docker运行容器前，需要本地存在对应的镜像，如果不存在，Docker会尝试从默认镜像仓库下载（Docker Hub），用户也可以通过配置，使用自定义的镜像仓库</p>
+<h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull ubuntu:14.04</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull registry.hub.docker.com/ubuntu:latest  从默认注册服务器中ubuntu仓库下载</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull dl.dockerpool.com:5000/ubuntu 从dockerPool社区镜像源下载Ubuntu镜像</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -t -i ubuntu /bin/bash  创建容器，在其中运行bash应用</span><br></pre></td></tr></table></figure>
+<h3 id="查看镜像信息"><a href="#查看镜像信息" class="headerlink" title="查看镜像信息"></a>查看镜像信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker images 列出本地主机上已有镜像</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect imageid 获取该镜像的详细信息，id可简写</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &#123;&#123;“.参数”&#125;&#125; imageid  获取镜像某个参数信息</span><br></pre></td></tr></table></figure>
+<h3 id="搜寻镜像"><a href="#搜寻镜像" class="headerlink" title="搜寻镜像"></a>搜寻镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker search xxxx  默认搜索Docker Hub</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--automated=<span class="literal">false</span> 仅显示自动创建的镜像</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>$</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--no-trunc=<span class="literal">false</span> 输出信息显示不截断</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-s, —star=0 指定显示评价为指定星际以上的镜像</span><br></pre></td></tr></table></figure>
+<h3 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker rmi imageid/标签</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker rmi dl.dockerpool.com:5000/ubuntu:latest</span><br></pre></td></tr></table></figure>
+<p>注意，当有该镜像创建的容器存在是，镜像文件默认是无法删除的。可通过 <strong>docker rmi -f</strong> 强制删除，但是不建议这样做（强删除后，会有一个临时镜像存在），应该先删除依赖该镜像的容器，再删除镜像</p>
+<h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><p>基于已有镜像容器创建、基于本地模板导入、基于Dockerfile创建</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-a —auther=“” 作者信息</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-m , —message=“” 提交消息</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-p, —pause=<span class="literal">true</span> 提交时暂停容器运行</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker commit -m “xxxx” -a “wudi” xxxcontrainerid <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>$</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ubunt-14.04-x86_64-minimal.tar.gz | docker import - ubuntu:14.04</span><br></pre></td></tr></table></figure>
+<h3 id="存出和载入镜像"><a href="#存出和载入镜像" class="headerlink" title="存出和载入镜像"></a>存出和载入镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker save -o ubuntu_14.04.tar ubuntu:14.04 存出</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker load —input ubuntu_14.04.tar 载入</span><br></pre></td></tr></table></figure>
+<h3 id="上传镜像"><a href="#上传镜像" class="headerlink" title="上传镜像"></a>上传镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker push NAME[:TAG] 默认上传到DockerHub仓库,先注册</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker tag <span class="built_in">test</span>:latest user/<span class="built_in">test</span>:latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker push user/<span class="built_in">test</span>:latest</span><br></pre></td></tr></table></figure>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>容器时镜像的一个运行实例，带有额外的可写文件层。虚拟机模拟运行的是一整套操作系统，容器就是独立运行的一个或一组应用，以及他们的必须运行环境</p>
+<h3 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker create -it ubuntu:latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker start</span><br></pre></td></tr></table></figure>
+<h3 id="新建并启动容器"><a href="#新建并启动容器" class="headerlink" title="新建并启动容器"></a>新建并启动容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run ubuntu /bin/bash <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">exit</span> 退出容器</span><br></pre></td></tr></table></figure>
+<p></p>
+<h3 id="终止容器"><a href="#终止容器" class="headerlink" title="终止容器"></a>终止容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker stop</span><br></pre></td></tr></table></figure>
+<h3 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker restart</span><br></pre></td></tr></table></figure>
+<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="built_in">exec</span>  -ti contrainerid /bin/bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker attach 多个窗口attach到同一个容器时，所有窗口会同步显示</span><br></pre></td></tr></table></figure>
+<h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker rm</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-f 强制终止并删除一个运行中的容器</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-l 删除容器的连接，但保留容器</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-v 删除容器挂载的数据卷</span><br></pre></td></tr></table></figure>
+<h3 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps -a</span><br></pre></td></tr></table></figure>
+<p></p>
+<h3 id="导出容器"><a href="#导出容器" class="headerlink" title="导出容器"></a>导出容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="built_in">export</span> containerid &gt;test.jar</span><br></pre></td></tr></table></figure>
+<p>可将这些文件传输到其他机器上，在其他机器上通过导入命令实现容器的迁移
+</p>
+<h3 id="导入容器"><a href="#导入容器" class="headerlink" title="导入容器"></a>导入容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker import</span><br></pre></td></tr></table></figure>
+<p>导出的文件可以导入，成为镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat test.jar | sudo docker import - <span class="built_in">test</span>/ubuntu:v1.0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker load 命令用来导入一个镜像文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker import 命令导入一个容器快照到本地镜像库，容器快照文件会丢弃所有的历史记录和元数据信息，镜像文件将完整保存</span><br></pre></td></tr></table></figure>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
